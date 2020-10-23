@@ -78,14 +78,17 @@ function floatingTooltip(tooltipId, widthtt) {
       .style('top', tttop + 'px')
       .style('left', ttleft + 'px');*/
 
-    console.log(ttleft)
-    console.log(document.getElementById("container").clientWidth)
     if (curX > document.getElementById("container").clientWidth/2){
 
       if (document.getElementById("container").clientWidth>720)
-        tt
-          .style('top', widthtt / 3 + 'px')
-          .style('left', (document.getElementById("container").clientWidth / 3 - widthtt) + 'px');
+        if (document.getElementById("container").clientWidth / 3 - widthtt>0)
+          tt
+            .style('top', widthtt / 3 + 'px')
+            .style('left', (document.getElementById("container").clientWidth / 3 - widthtt) + 'px');         
+        else
+          tt
+            .style('top', widthtt / 3 + 'px')
+            .style('left', (5) + 'px');
       else
 
         tt
@@ -185,15 +188,15 @@ function updatelineChart(refIndic){
     if (refIndic == "1" || refIndic == "2" || refIndic == "6" || refIndic == "7" || refIndic == "9" || refIndic == "10" || refIndic == "12")
       lineSVG.append("g")
         .attr("class", "axisContext y")
-        .call(d3.axisLeft(y).tickFormat(function (d) {
-          return y.tickFormat(4, d3.format(".0f"))(d) + "%"
+        .call(d3.axisLeft(y).ticks(5).tickFormat(function (d) {
+          return y.tickFormat(10, d3.format(".0f"))(d) + "%"
         }).tickSize(-(widthLine)));
  
     if (refIndic == "3" || refIndic == "4" || refIndic == "5" || refIndic == "8" || refIndic == "11")
       lineSVG.append("g")
         .attr("class", "axisContext y")
-        .call(d3.axisLeft(y).tickFormat(function (d) {
-            return y.tickFormat(4, d3.format(".0f"))(d)
+        .call(d3.axisLeft(y).ticks(5).tickFormat(function (d) {
+          return y.tickFormat(10, d3.format(".0f"))(d)
         }).tickSize(-(widthLine)));
 
   var color = ["#037BC1", "#ED4E70", "#0BB89C"];

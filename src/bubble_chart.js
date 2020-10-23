@@ -611,7 +611,7 @@ function addCommas(nStr) {
 }
 
 // Load the data.
-d3.tsv('data/inclusiveGrowth.tsv', display);
+d3.tsv('data/summaryData.tsv', display);
 
 
 //load time serie data
