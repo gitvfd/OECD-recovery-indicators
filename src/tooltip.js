@@ -95,7 +95,7 @@ function updatelineChart(refIndic){
 
   //lineSVG.selectAll("*").remove()
 
-  var margin = 30;
+  var margin = 40;
   var widthLine = document.getElementById("tooltipId").offsetWidth - 2 * margin;
 
   var heightLine=150;
@@ -130,7 +130,7 @@ function updatelineChart(refIndic){
   min = 1.25 * d3.min(data, function (d) { return parseFloat(d.value); })
   
   max = 1.25 * d3.max(data, function (d) { return parseFloat(d.value); })
-  console.log(min)
+
   y.domain([min, max])
 
   lineSVG

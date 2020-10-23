@@ -194,38 +194,6 @@ function bubbleChart() {
       .attr('width', width)
       .attr('height', height);
 
-    //Add Emission icon
-    /**svg.append("image")
-    .attr("x",width/4)
-    .attr("y",0)
-    .attr("width",width/1.5)
-    .attr("height",width/1.5)
-    .attr("xlink:href", "img/inclusive.svg")
-    .style("opacity",0.2)
-**/
-
-
-  //Add color key
-  /**svg.selectAll("circle")
-    .data(["positive","negative","stable"])
-    .enter()
-    .append("circle")
-    .attr("class","key")
-    .attr("cx",function(d,i){return (width/15+ 120*i);})
-    .attr("cy",height/20)
-    .attr("r",10)
-    .attr('fill', function (d) {return fillColor(d); })
-    .attr('stroke', function (d) { return d3.rgb(fillColor(d)).darker(); })**/
-
-  //Add text to color key
-  /**svg.selectAll("text")
-    .data(["positive","negative","stable"])
-    .enter()
-    .append("text")
-    .attr("class","keyText")
-    .attr("x",function(d,i){return (width/15+ 120*i+15);})
-    .attr("y",height/20+5)
-    .text(function(d){return d;})**/
 
 
 
@@ -255,7 +223,7 @@ function bubbleChart() {
     var textE = text.enter().append('text')
       .classed('label', true)
       .attr('text-anchor', 'middle')
-      .text(function (d) { return d.name.substring(0, d.radius / 3); ; })
+      .text(function (d) { return d.name/*.substring(0, d.radius / 3)*/ ; })
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
     //  .call(wrap)
@@ -263,7 +231,8 @@ function bubbleChart() {
     
 
     function wrap(text) {
-      text.each(function (d) {console.log(d)
+      text.each(function (d) {
+        console.log(d)
       var text = d3.select(this),
         width = d.radius * 2,
         x = d.x,

@@ -1,161 +1,201 @@
 year	refIndic	indicator	variable	value
-2000	1	GDP per capita growth	avg	4
-2001	1	GDP per capita growth	avg	
-2002	1	GDP per capita growth	avg	
-2003	1	GDP per capita growth	avg	
-2004	1	GDP per capita growth	avg	
-2005	1	GDP per capita growth	avg	3
-2006	1	GDP per capita growth	avg	
-2007	1	GDP per capita growth	avg	
-2008	1	GDP per capita growth	avg	
-2009	1	GDP per capita growth	avg	
-2010	1	GDP per capita growth	avg	2
-2011	1	GDP per capita growth	avg	
-2012	1	GDP per capita growth	avg	
-2013	1	GDP per capita growth	avg	
-2014	1	GDP per capita growth	avg	
-2015	1	GDP per capita growth	avg	2.5
-2016	1	GDP per capita growth	avg	
-2017	1	GDP per capita growth	avg	
-2018	1	GDP per capita growth	avg	
-2019	1	GDP per capita growth	avg	1.9
-2000	1	GDP per capita growth	median	3.8
-2001	1	GDP per capita growth	median	
-2002	1	GDP per capita growth	median	
-2003	1	GDP per capita growth	median	
-2004	1	GDP per capita growth	median	
-2005	1	GDP per capita growth	median	2.2
-2006	1	GDP per capita growth	median	
-2007	1	GDP per capita growth	median	
-2008	1	GDP per capita growth	median	
-2009	1	GDP per capita growth	median	
-2010	1	GDP per capita growth	median	2
-2011	1	GDP per capita growth	median	
-2012	1	GDP per capita growth	median	
-2013	1	GDP per capita growth	median	
-2014	1	GDP per capita growth	median	
-2015	1	GDP per capita growth	median	2
-2016	1	GDP per capita growth	median	
-2017	1	GDP per capita growth	median	
-2018	1	GDP per capita growth	median	
-2019	1	GDP per capita growth	median	1.7
-2000	1	GDP per capita growth	perc10	1.9
-2001	1	GDP per capita growth	perc10	
-2002	1	GDP per capita growth	perc10	
-2003	1	GDP per capita growth	perc10	
-2004	1	GDP per capita growth	perc10	
-2005	1	GDP per capita growth	perc10	1
-2006	1	GDP per capita growth	perc10	
-2007	1	GDP per capita growth	perc10	
-2008	1	GDP per capita growth	perc10	
-2009	1	GDP per capita growth	perc10	
-2010	1	GDP per capita growth	perc10	-0.1
-2011	1	GDP per capita growth	perc10	
-2012	1	GDP per capita growth	perc10	
-2013	1	GDP per capita growth	perc10	
-2014	1	GDP per capita growth	perc10	
-2015	1	GDP per capita growth	perc10	0.1
-2016	1	GDP per capita growth	perc10	
-2017	1	GDP per capita growth	perc10	
-2018	1	GDP per capita growth	perc10	
-2019	1	GDP per capita growth	perc10	0
-2000	1	GDP per capita growth	perc90	6.5
-2001	1	GDP per capita growth	perc90	
-2002	1	GDP per capita growth	perc90	
-2003	1	GDP per capita growth	perc90	
-2004	1	GDP per capita growth	perc90	
-2005	1	GDP per capita growth	perc90	6.8
-2006	1	GDP per capita growth	perc90	
-2007	1	GDP per capita growth	perc90	
-2008	1	GDP per capita growth	perc90	
-2009	1	GDP per capita growth	perc90	
-2010	1	GDP per capita growth	perc90	5
-2011	1	GDP per capita growth	perc90	
-2012	1	GDP per capita growth	perc90	
-2013	1	GDP per capita growth	perc90	
-2014	1	GDP per capita growth	perc90	
-2015	1	GDP per capita growth	perc90	4.2
-2016	1	GDP per capita growth	perc90	
-2017	1	GDP per capita growth	perc90	
-2018	1	GDP per capita growth	perc90	
-2019	1	GDP per capita growth	perc90	4
-2000	2	GDP per capita growth	avg	4
-2001	2	GDP per capita growth	avg	
-2002	2	GDP per capita growth	avg	
-2003	2	GDP per capita growth	avg	
-2004	2	GDP per capita growth	avg	
-2005	2	GDP per capita growth	avg	3
-2006	2	GDP per capita growth	avg	
-2007	2	GDP per capita growth	avg	
-2008	2	GDP per capita growth	avg	
-2009	2	GDP per capita growth	avg	
-2010	2	GDP per capita growth	avg	2
-2011	2	GDP per capita growth	avg	
-2012	2	GDP per capita growth	avg	
-2013	2	GDP per capita growth	avg	
-2014	2	GDP per capita growth	avg	
-2015	2	GDP per capita growth	avg	2.5
-2016	2	GDP per capita growth	avg	
-2017	2	GDP per capita growth	avg	
-2018	2	GDP per capita growth	avg	
-2019	2	GDP per capita growth	avg	1.9
-2000	2	GDP per capita growth	median	3.8
-2001	2	GDP per capita growth	median	
-2002	2	GDP per capita growth	median	
-2003	2	GDP per capita growth	median	
-2004	2	GDP per capita growth	median	
-2005	2	GDP per capita growth	median	2.2
-2006	2	GDP per capita growth	median	
-2007	2	GDP per capita growth	median	
-2008	2	GDP per capita growth	median	
-2009	2	GDP per capita growth	median	
-2010	2	GDP per capita growth	median	2
-2011	2	GDP per capita growth	median	
-2012	2	GDP per capita growth	median	
-2013	2	GDP per capita growth	median	
-2014	2	GDP per capita growth	median	
-2015	2	GDP per capita growth	median	2
-2016	2	GDP per capita growth	median	
-2017	2	GDP per capita growth	median	
-2018	2	GDP per capita growth	median	
-2019	2	GDP per capita growth	median	1.7
-2000	2	GDP per capita growth	perc10	1.9
-2001	2	GDP per capita growth	perc10	
-2002	2	GDP per capita growth	perc10	
-2003	2	GDP per capita growth	perc10	
-2004	2	GDP per capita growth	perc10	
-2005	2	GDP per capita growth	perc10	1
-2006	2	GDP per capita growth	perc10	
-2007	2	GDP per capita growth	perc10	
-2008	2	GDP per capita growth	perc10	
-2009	2	GDP per capita growth	perc10	
-2010	2	GDP per capita growth	perc10	-0.1
-2011	2	GDP per capita growth	perc10	
-2012	2	GDP per capita growth	perc10	
-2013	2	GDP per capita growth	perc10	
-2014	2	GDP per capita growth	perc10	
-2015	2	GDP per capita growth	perc10	0.1
-2016	2	GDP per capita growth	perc10	
-2017	2	GDP per capita growth	perc10	
-2018	2	GDP per capita growth	perc10	
-2019	2	GDP per capita growth	perc10	0
-2000	2	GDP per capita growth	perc90	6.5
-2001	2	GDP per capita growth	perc90	
-2002	2	GDP per capita growth	perc90	
-2003	2	GDP per capita growth	perc90	
-2004	2	GDP per capita growth	perc90	
-2005	2	GDP per capita growth	perc90	6.8
-2006	2	GDP per capita growth	perc90	
-2007	2	GDP per capita growth	perc90	
-2008	2	GDP per capita growth	perc90	
-2009	2	GDP per capita growth	perc90	
-2010	2	GDP per capita growth	perc90	5
-2011	2	GDP per capita growth	perc90	
-2012	2	GDP per capita growth	perc90	
-2013	2	GDP per capita growth	perc90	
-2014	2	GDP per capita growth	perc90	
-2015	2	GDP per capita growth	perc90	4.2
-2016	2	GDP per capita growth	perc90	
-2017	2	GDP per capita growth	perc90	
-2018	2	GDP per capita growth	perc90	
-2019	2	GDP per capita growth	perc90	4
+2000	1	GDP per capita growth	avg	4.0
+2005	1	GDP per capita growth	avg	3.3
+2010	1	GDP per capita growth	avg	2.1
+2015	1	GDP per capita growth	avg	2.7
+2019	1	GDP per capita growth	avg	1.4
+2000	1	GDP per capita growth	median	3.5
+2005	1	GDP per capita growth	median	2.3
+2010	1	GDP per capita growth	median	1.9
+2015	1	GDP per capita growth	median	2.1
+2019	1	GDP per capita growth	median	1.1
+2000	1	GDP per capita growth	perc10	1.7
+2005	1	GDP per capita growth	perc10	0.9
+2010	1	GDP per capita growth	perc10	-0.3
+2015	1	GDP per capita growth	perc10	0.2
+2019	1	GDP per capita growth	perc10	0.1
+2000	1	GDP per capita growth	perc90	6.7
+2005	1	GDP per capita growth	perc90	6.9
+2010	1	GDP per capita growth	perc90	4.9
+2015	1	GDP per capita growth	perc90	4.3
+2019	1	GDP per capita growth	perc90	4.0
+2007	2	Labour market insecurity	avg	3.8
+2010	2	Labour market insecurity	avg	6.0
+2015	2	Labour market insecurity	avg	5.5
+2016	2	Labour market insecurity	avg	5.1
+2007	2	Labour market insecurity	median	3.3
+2010	2	Labour market insecurity	median	5.4
+2015	2	Labour market insecurity	median	4.0
+2016	2	Labour market insecurity	median	3.8
+2007	2	Labour market insecurity	perc10	1.5
+2010	2	Labour market insecurity	perc10	2.0
+2015	2	Labour market insecurity	perc10	2.3
+2016	2	Labour market insecurity	perc10	2.3
+2007	2	Labour market insecurity	perc90	6.6
+2010	2	Labour market insecurity	perc90	11.1
+2015	2	Labour market insecurity	perc90	10.2
+2016	2	Labour market insecurity	perc90	8.7
+2000	4	Exposure to air pollution	avg	15.6
+2005	4	Exposure to air pollution	avg	15.6
+2010	4	Exposure to air pollution	avg	15.6
+2015	4	Exposure to air pollution	avg	13.6
+2017	4	Exposure to air pollution	avg	12.7
+2000	4	Exposure to air pollution	median	14.8
+2005	4	Exposure to air pollution	median	14.6
+2010	4	Exposure to air pollution	median	15.0
+2015	4	Exposure to air pollution	median	12.9
+2017	4	Exposure to air pollution	median	12.0
+2000	4	Exposure to air pollution	perc10	8.3
+2005	4	Exposure to air pollution	perc10	8.4
+2010	4	Exposure to air pollution	perc10	8.3
+2015	4	Exposure to air pollution	perc10	7.1
+2017	4	Exposure to air pollution	perc10	6.7
+2000	4	Exposure to air pollution	perc90	24.9
+2005	4	Exposure to air pollution	perc90	24.1
+2010	4	Exposure to air pollution	perc90	25.0
+2015	4	Exposure to air pollution	perc90	22.4
+2017	4	Exposure to air pollution	perc90	20.9
+2006	3	Life satisfaction	avg	6.5
+2010	3	Life satisfaction	avg	6.5
+2015	3	Life satisfaction	avg	6.5
+2019	3	Life satisfaction	avg	6.7
+2006	3	Life satisfaction	median	6.8
+2010	3	Life satisfaction	median	6.7
+2015	3	Life satisfaction	median	6.6
+2019	3	Life satisfaction	median	6.7
+2006	3	Life satisfaction	perc10	5.3
+2010	3	Life satisfaction	perc10	5.3
+2015	3	Life satisfaction	perc10	5.5
+2019	3	Life satisfaction	perc10	5.9
+2006	3	Life satisfaction	perc90	7.5
+2010	3	Life satisfaction	perc90	7.5
+2015	3	Life satisfaction	perc90	7.4
+2019	3	Life satisfaction	perc90	7.4
+2005	5	Income inequality	avg	5.4
+2010	5	Income inequality	avg	5.2
+2015	5	Income inequality	avg	5.4
+2017	5	Income inequality	avg	5.2
+2005	5	Income inequality	median	5.2
+2010	5	Income inequality	median	4.8
+2015	5	Income inequality	median	4.6
+2017	5	Income inequality	median	4.5
+2005	5	Income inequality	perc10	3.6
+2010	5	Income inequality	perc10	3.7
+2015	5	Income inequality	perc10	3.7
+2017	5	Income inequality	perc10	3.6
+2005	5	Income inequality	perc90	7.9
+2010	5	Income inequality	perc90	7.6
+2015	5	Income inequality	perc90	7.3
+2017	5	Income inequality	perc90	7.5
+2005	6	Employment gap for disadvantaged groups	avg	35.3
+2010	6	Employment gap for disadvantaged groups	avg	33.0
+2015	6	Employment gap for disadvantaged groups	avg	30.7
+2019	6	Employment gap for disadvantaged groups	avg	28.3
+2005	6	Employment gap for disadvantaged groups	median	34.6
+2010	6	Employment gap for disadvantaged groups	median	28.7
+2015	6	Employment gap for disadvantaged groups	median	29.7
+2019	6	Employment gap for disadvantaged groups	median	25.0
+2005	6	Employment gap for disadvantaged groups	perc10	22.6
+2010	6	Employment gap for disadvantaged groups	perc10	22.2
+2015	6	Employment gap for disadvantaged groups	perc10	21.2
+2019	6	Employment gap for disadvantaged groups	perc10	18.7
+2005	6	Employment gap for disadvantaged groups	perc90	49.0
+2010	6	Employment gap for disadvantaged groups	perc90	45.2
+2015	6	Employment gap for disadvantaged groups	perc90	40.5
+2019	6	Employment gap for disadvantaged groups	perc90	38.9
+2005	7	Gender wage gap	avg	17.4
+2010	7	Gender wage gap	avg	15.6
+2015	7	Gender wage gap	avg	14.8
+2019	7	Gender wage gap	avg	13.7
+2005	7	Gender wage gap	median	16.3
+2010	7	Gender wage gap	median	14.3
+2015	7	Gender wage gap	median	15.8
+2019	7	Gender wage gap	median	13.9
+2005	7	Gender wage gap	perc10	10.2
+2010	7	Gender wage gap	perc10	7.3
+2015	7	Gender wage gap	perc10	6.5
+2019	7	Gender wage gap	perc10	4.9
+2005	7	Gender wage gap	perc90	22.1
+2010	7	Gender wage gap	perc90	20.2
+2015	7	Gender wage gap	perc90	20.1
+2019	7	Gender wage gap	perc90	21.9
+2000	8	Production-based CO2 productivity	avg	4.4
+2005	8	Production-based CO2 productivity	avg	4.8
+2010	8	Production-based CO2 productivity	avg	5.3
+2015	8	Production-based CO2 productivity	avg	6.4
+2018	8	Production-based CO2 productivity	avg	6.9
+2000	8	Production-based CO2 productivity	median	4.2
+2005	8	Production-based CO2 productivity	median	4.5
+2010	8	Production-based CO2 productivity	median	4.9
+2015	8	Production-based CO2 productivity	median	5.9
+2018	8	Production-based CO2 productivity	median	6.1
+2000	8	Production-based CO2 productivity	perc10	2.3
+2005	8	Production-based CO2 productivity	perc10	2.5
+2010	8	Production-based CO2 productivity	perc10	2.9
+2015	8	Production-based CO2 productivity	perc10	3.5
+2018	8	Production-based CO2 productivity	perc10	3.7
+2000	8	Production-based CO2 productivity	perc90	6.6
+2005	8	Production-based CO2 productivity	perc90	7.9
+2010	8	Production-based CO2 productivity	perc90	7.9
+2015	8	Production-based CO2 productivity	perc90	9.0
+2018	8	Production-based CO2 productivity	perc90	9.9
+2006	10	Trust in government	avg	42.5
+2010	10	Trust in government	avg	40.1
+2015	10	Trust in government	avg	39.7
+2019	10	Trust in government	avg	43.1
+2006	10	Trust in government	median	42.0
+2010	10	Trust in government	median	40.0
+2015	10	Trust in government	median	36.3
+2019	10	Trust in government	median	40.5
+2006	10	Trust in government	perc10	24.7
+2010	10	Trust in government	perc10	24.8
+2015	10	Trust in government	perc10	26.5
+2019	10	Trust in government	perc10	27.4
+2006	10	Trust in government	perc90	58.0
+2010	10	Trust in government	perc90	57.8
+2015	10	Trust in government	perc90	58.0
+2019	10	Trust in government	perc90	60.7
+2004	9	Natural land cover	avg	58.6
+2015	9	Natural land cover	avg	58.6
+2004	9	Natural land cover	median	63.8
+2015	9	Natural land cover	median	64.1
+2004	9	Natural land cover	perc10	37.4
+2015	9	Natural land cover	perc10	37.5
+2004	9	Natural land cover	perc90	83.5
+2015	9	Natural land cover	perc90	83.1
+2000	11	Avoidable mortality	avg	307.7
+2005	11	Avoidable mortality	avg	268.8
+2010	11	Avoidable mortality	avg	233.2
+2015	11	Avoidable mortality	avg	206.7
+2017	11	Avoidable mortality	avg	199.3
+2000	11	Avoidable mortality	median	265.0
+2005	11	Avoidable mortality	median	227.0
+2010	11	Avoidable mortality	median	204.0
+2015	11	Avoidable mortality	median	182.0
+2017	11	Avoidable mortality	median	177.0
+2000	11	Avoidable mortality	perc10	217.4
+2005	11	Avoidable mortality	perc10	181.8
+2010	11	Avoidable mortality	perc10	155.9
+2015	11	Avoidable mortality	perc10	141.8
+2017	11	Avoidable mortality	perc10	136.5
+2000	11	Avoidable mortality	perc90	435.4
+2005	11	Avoidable mortality	perc90	405.8
+2010	11	Avoidable mortality	perc90	376.3
+2015	11	Avoidable mortality	perc90	313.4
+2017	11	Avoidable mortality	perc90	300.3
+2007	12	Financial net worth of general government	avg	-10.7
+2010	12	Financial net worth of general government	avg	-22.0
+2015	12	Financial net worth of general government	avg	-30.1
+2018	12	Financial net worth of general government	avg	-25.3
+2007	12	Financial net worth of general government	median	-15.8
+2010	12	Financial net worth of general government	median	-29.4
+2015	12	Financial net worth of general government	median	-41.6
+2018	12	Financial net worth of general government	median	-31.4
+2007	12	Financial net worth of general government	perc10	-69.6
+2010	12	Financial net worth of general government	perc10	-80.5
+2015	12	Financial net worth of general government	perc10	-105.5
+2018	12	Financial net worth of general government	perc10	-97.4
+2007	12	Financial net worth of general government	perc90	28.1
+2010	12	Financial net worth of general government	perc90	32.6
+2015	12	Financial net worth of general government	perc90	37.8
+2018	12	Financial net worth of general government	perc90	35.4
