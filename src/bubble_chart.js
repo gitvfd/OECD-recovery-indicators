@@ -112,10 +112,12 @@ function bubbleChart() {
 
   // Nice looking colors - no reason to buck the trend
   // @v4 scales now have a flattened naming scheme
-  var fillColor = d3.scaleOrdinal()
+  /**var fillColor = d3.scaleOrdinal()
     .domain(['positive','negative','stable'])
-    .range(['#27B499', '#F15C54','#9AB0BE']);
-
+    .range(['#27B499', '#F15C54','#9AB0BE']);**/
+  var fillColor = d3.scaleOrdinal()
+    .domain(['1', '2', '3','4','5','6','7','8','9','10','11','12'])
+    .range(['#037BC1', '#A154A1', '#D70B8C', '#ED4E70', '#DA2128', '#F47920', '#FFC20E', '#8CC841', '#4DB757', '#0BB89C', '#00A8CB', '#0D809B']);
 
   /*
    * This data manipulation function takes the raw data from
@@ -193,18 +195,18 @@ function bubbleChart() {
       .attr('height', height);
 
     //Add Emission icon
-    svg.append("image")
+    /**svg.append("image")
     .attr("x",width/4)
     .attr("y",0)
     .attr("width",width/1.5)
     .attr("height",width/1.5)
     .attr("xlink:href", "img/inclusive.svg")
     .style("opacity",0.2)
-
+**/
 
 
   //Add color key
-  svg.selectAll("circle")
+  /**svg.selectAll("circle")
     .data(["positive","negative","stable"])
     .enter()
     .append("circle")
@@ -213,17 +215,17 @@ function bubbleChart() {
     .attr("cy",height/20)
     .attr("r",10)
     .attr('fill', function (d) {return fillColor(d); })
-    .attr('stroke', function (d) { return d3.rgb(fillColor(d)).darker(); })
+    .attr('stroke', function (d) { return d3.rgb(fillColor(d)).darker(); })**/
 
   //Add text to color key
-  svg.selectAll("text")
+  /**svg.selectAll("text")
     .data(["positive","negative","stable"])
     .enter()
     .append("text")
     .attr("class","keyText")
     .attr("x",function(d,i){return (width/15+ 120*i+15);})
     .attr("y",height/20+5)
-    .text(function(d){return d;})
+    .text(function(d){return d;})**/
 
 
 
@@ -244,8 +246,8 @@ function bubbleChart() {
     var bubblesE = bubbles.enter().append('circle')
       .classed('bubble', true)
       .attr('r', 0)
-      .attr('fill', function (d) {return fillColor(d.colorGroup); })
-      .attr('stroke', function (d) { return d3.rgb(fillColor(d.colorGroup)).darker(); })
+      .attr('fill', function (d) {return fillColor(d.refIndic); })
+      .attr('stroke', function (d) { return d3.rgb(fillColor(d.refIndic)).darker(); })
       .attr('stroke-width', 2)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
@@ -254,6 +256,8 @@ function bubbleChart() {
       .classed('label', true)
       .attr('text-anchor', 'middle')
       .text(function (d) { return d.name.substring(0, d.radius / 3); ; })
+      .on('mouseover', showDetail)
+      .on('mouseout', hideDetail);
     //  .call(wrap)
 
     
@@ -506,15 +510,14 @@ function bubbleChart() {
   function showDetail(d) {
     // change outline to indicate hover state.
     d3.select(this).attr('stroke', 'black');
+
+    d3.select(this).attr('opacity', 0.75);
     var content = '<b>'+ d.name +
                   '</b><br><span class="name"></span><span class="value">' +
                   d.indicator +
                   '</span><br/>' +
                   '<span class="name"></span><span class="value">' +
                   d.Unit +
-                  '</span><br/>' +
-                  '<span class="name">Growth: </span><span class="value">' +
-                  addCommas(f(d.value)) +
                   '</span><br/>' +
                   '<span id="lineChart"/>';
                   
@@ -528,7 +531,8 @@ function bubbleChart() {
   function hideDetail(d) {
     // reset outline
     d3.select(this)
-      .attr('stroke', d3.rgb(fillColor(d.colorGroup)).darker());
+      .attr('stroke', d3.rgb(fillColor(d.refIndic)).darker());
+    d3.select(this).attr('opacity', 1);
 
     tooltip.hideTooltip();
   }

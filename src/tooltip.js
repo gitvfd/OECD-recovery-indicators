@@ -80,8 +80,8 @@ function floatingTooltip(tooltipId, width) {
       .style('left', ttleft + 'px');*/
 console.log(width)
     tt
-      .style('top', 240+ 'px')
-      .style('left', width/2 + 'px');
+      .style('top', width/2+ 'px')
+      .style('left', (document.getElementById("vis").offsetWidth / 2 - width / 2)+ 'px');
   }
 
   return {
