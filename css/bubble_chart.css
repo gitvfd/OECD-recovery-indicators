@@ -88,16 +88,15 @@ h2{
 }
 
 .label{
-
   font-family: 'Noto Sans', sans-serif;
-  font-size:14px; 
+  font-size:12px; 
   font-weight:700;
   fill:#575757;
   
   cursor: default;
 }
 .Layer {
-  font-family:TheSerif;
+  font-family:'Noto Sans';
   font-weight: 300;
   font-size: 22px;
   fill: #787878;
@@ -121,7 +120,7 @@ h2{
   border: 2px solid #000;
   background: #fff;
 	opacity: .9;
-  color: black;
+  color: #575757;
 	padding: 10px;
 	width: 300px;
 	font-size: 12px;
@@ -129,13 +128,28 @@ h2{
 }
 
 .tooltip .title {
-	font-size: 13px;
+  font-family: 'Noto Sans';
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
 .tooltip .name {
-  font-weight:300;
+
+  font-family: 'Noto Sans';
+  font-weight:600;
 }
 
+.tooltip .unit {
+
+  font-family: 'Noto Sans';
+  font-weight:300;
+}
+.tooltip .value {
+
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight:300;
+}
 .footer {
   text-align: left;
 }
@@ -158,4 +172,16 @@ h2{
 .axisContext text{
   color:#575757;
   stroke:none
+}
+
+@media (max-width: 600px) {
+
+.label{
+
+  font-size:12px; 
+}
+.Layer {
+  font-size: 14px;
+}
+
 }

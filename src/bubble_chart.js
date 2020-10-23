@@ -136,12 +136,14 @@ function bubbleChart() {
     // note we have to ensure the total_amount is a number.
     var maxAmount = d3.max(rawData, function (d) { return +d.Total; });
 
+    var maxLetter = d3.max(rawData, function (d) { return d.Theme.length; });
+
     // Sizes bubbles based on area.
     // @v4: new flattened scale names.
     var radiusScale = d3.scalePow()
       .exponent(0.5)
       .range([1, width/12.5])
-      .domain([0., maxAmount]);
+      .domain([0., maxLetter]);
 
     // Use map() to convert raw data into node data.
     // Checkout http://learnjsdata.com/ for more on
@@ -149,11 +151,13 @@ function bubbleChart() {
     var myNodes = rawData.map(function (d) {
       return {
         id: d.RefIndic,
-        radius: radiusScale(Math.abs(+d.Total)),
+        radius_old: radiusScale(Math.abs(+d.Total)),
+        radius: radiusScale(Math.abs(d.Theme.length)),
         value: +d.Total,
         Unit:d.Unit,
         name: d.Theme,
         indicator:d.Indicator,
+        label:d.Label,
         colorGroup:d.Trend,
         layerGrowth: d.Trend,
         layerGroup: d.Group,
@@ -225,8 +229,8 @@ function bubbleChart() {
       .attr('text-anchor', 'middle')
       .text(function (d) { return d.name/*.substring(0, d.radius / 3)*/ ; })
       .on('mouseover', showDetail)
-      .on('mouseout', hideDetail);
-    //  .call(wrap)
+      .on('mouseout', hideDetail)
+      //.call(wrap)
 
     
 
@@ -481,11 +485,14 @@ function bubbleChart() {
     d3.select(this).attr('stroke', 'black');
 
     d3.select(this).attr('opacity', 0.75);
-    var content = '<b>'+ d.name +
-                  '</b><br><span class="name"></span><span class="value">' +
-                  d.indicator +
+    var content = '<b><span class="title">'+ d.name +
+
+      '</span><br></b><br><span class="name">' +
+      d.indicator +
+                  '<br></span><span class="unit">' +
+                  d.label +
                   '</span><br/>' +
-                  '<span class="name"></span><span class="value">' +
+                  '<br><span class="value">' +
                   d.Unit +
                   '</span><br/>' +
                   '<span id="lineChart"/>';

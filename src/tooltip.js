@@ -95,20 +95,20 @@ function updatelineChart(refIndic){
 
   //lineSVG.selectAll("*").remove()
 
-  var margin = 40;
-  var widthLine = document.getElementById("tooltipId").offsetWidth - 2 * margin;
+  var margin = {"top":5,"bottom":20,"left":30,"right":20};
+  var widthLine = document.getElementById("tooltipId").offsetWidth - margin.left-margin.right;
 
   var heightLine=150;
 
   var lineSVG = d3.select("#lineChart").append("svg")
-    .attr("width", widthLine +2* margin)
-    .attr("height", heightLine + 2 * margin)
+    .attr("width", widthLine +margin.left + margin.right)
+    .attr("height", heightLine + margin.top + margin.bottom)
     .append("g")
     .attr("transform",
-      "translate(" + margin + "," + margin + ")");
+      "translate(" + margin.left + "," + margin.top + ")");
 
   var x = d3.scaleLinear()
-    .range([margin, widthLine-margin]);
+    .range([margin.left, widthLine-margin.right]);
 
   function dateParser(d) {
 
@@ -125,13 +125,22 @@ function updatelineChart(refIndic){
 
 
   x.domain(d3.extent(data, function (d) { console.log(dateParser(d.year));return dateParser(d.year); }))
-  console.log(x)
+ 
   var min, max;
-  min = 1.25 * d3.min(data, function (d) { return parseFloat(d.value); })
-  
-  max = 1.25 * d3.max(data, function (d) { return parseFloat(d.value); })
+  min =  d3.min(data, function (d) { return parseFloat(d.value); })
 
-  y.domain([min, max])
+  max = 1.1 * d3.max(data, function (d) { return parseFloat(d.value); })
+  if(min<0){
+    if (max > 0)
+      y.domain([1.1 * min, 1.1 *max])
+    else
+      y.domain([1.1 *min, 0.9 * max])
+  } else {
+    if (max > 0)
+      y.domain([0.9 * min, 1.1 *max])
+    else
+      y.domain([0.9* min, 0.9*max])
+  }
 
   lineSVG
     .append("g")
@@ -149,18 +158,22 @@ function updatelineChart(refIndic){
         // calculate the year
         var yr = vanilli.getFullYear();
 
-        
-
         return yr;
 
       }));
-
-  lineSVG.append("g")
-    .attr("class", "axisContext y")
-    .call(d3.axisLeft(y).tickFormat(function (d) {
-      return y.tickFormat(10, d3.format(".1f"))(d) + "%"
-    }).tickSize(-(widthLine)));
-
+    if (refIndic == "1" || refIndic == "2" || refIndic == "6" || refIndic == "7" || refIndic == "9" || refIndic == "10" || refIndic == "12")
+      lineSVG.append("g")
+        .attr("class", "axisContext y")
+        .call(d3.axisLeft(y).tickFormat(function (d) {
+          return y.tickFormat(10, d3.format(".0f"))(d) + "%"
+        }).tickSize(-(widthLine)));
+ 
+    if (refIndic == "3" || refIndic == "4" || refIndic == "5" || refIndic == "8" || refIndic == "11")
+      lineSVG.append("g")
+        .attr("class", "axisContext y")
+        .call(d3.axisLeft(y).tickFormat(function (d) {
+            return y.tickFormat(10, d3.format(".0f"))(d)
+        }).tickSize(-(widthLine)));
 
   var color = ["#037BC1", "#ED4E70", "#0BB89C"];
   //line average
@@ -187,6 +200,7 @@ function updatelineChart(refIndic){
     .attr("stroke", function (d) { return color[1] })
     .attr("stroke-width", function () { return 1.5; })
     .attr("opacity", function () { return 0.85 })
+    .style("stroke-dasharray", ("6,1"))
     .attr("class", "classContext")
     .attr("id", function (d) { return "medianline"; })
     .attr("d", function (d) {

@@ -1,13 +1,13 @@
-Theme	Indicator	Unit	Total	Unit_old	Group	RefIndic	Trend
-Economic activity	GDP per capita growth	Annual growth rate, %, constant prices	0.25	Percentage	Inclusive outcomes from growth	1	negative
-Job quality	Labour market insecurity	Expected monetary loss associated with becoming and staying unemployed, % of previous earnings	-0.5	Percentage	Inclusive outcomes from growth	2	negative
-Subjective well-being	Life satisfaction	Mean response on a 0- 10 scale	0.5	Percentage	Inclusive outcomes from growth	3	positive
-Quality of living place	PM2.5 exposure	% of population  exposed above WHO limit	-0.25	Percentage Points	Inclusive outcomes from growth	4	positive
-Income inequality	Income inequality	S80/S20 ratio of household disposable income	0.5	Percentage	Inclusive outcomes from growth	5	negative
-Employment gap	Employment gap of disadvantaged groups	% of the employment rate of prime-age male workers	-0.5	Percentage	Inclusive outcomes from growth	6	negative
-Gender wage gap	Gender wage gap	Gap between male and female median wages divided by male median wages, %	0.25	Percentage	Inclusive efficient markets	7	positive
-Climate change	CO2 productivity (production)	GDP per unit of CO2 emissions, USD/kg	-0.5	Percentage Points	Inclusive efficient markets	8	positive
-Natural capital	Stock of natural land cover	Natural and semi-natural vegetated land cover, % of total	0.5	Percentage	Inclusive efficient markets	9	positive
-Institutional capital	Trust in government	% of people responding positively	-0.25	Percentage Points	Inclusive efficient markets	10	positive
-Human capital/health	Number of avoidable deaths 	per 100,000 people	0.5	Percentage Points	Inclusive efficient markets	11	positive
-Fiscal sustainability	General government financial assets minus liabilities	% of GDP	-0.25	Percentage Points	Inclusive efficient markets	12	negative
+Theme	Indicator	Label	Unit	Total	Group	RefIndic	Trend
+Economic activity	GDP per capita growth	GDP per capita annual growth rate	%, constant prices	-2.56606786842105	Strong economic activity	1	negative
+Job quality	Labour market insecurity	Expected monetary loss associated with becoming and staying unemployed	% of previous earnings	1.21146380550721	Well-being today	2	negative
+Subjective well-being	Life evaluation	Mean response on a 0-10 scale	Mean response on a 0- 10 scale	1.73982674528645	Well-being today	3	positive
+Quality of living place	Exposure to air pollution	Mean population exposure to PM2.5	Micrograms per cubic metre	-18.5477133969374	Well-being today	4	positive
+Income inequality	Income inequality	S80/S20 ratio of household disposable income	Ratio	-2.31581580656088	Inclusion and equality of opportunity	5	negative
+Employment gap	Employment gap for disadvantaged groups	Average employment rate as a % of the benchmark group (prime-age male workers)	% of the employment rate of prime-age male workers	-7.06977054054053	Inclusion and equality of opportunity	6	positive
+Gender wage gap	Gender wage gap	Difference between male and female median wages, as a share of male median wage	% of male median wage	-3.64347826086956	Inclusion and equality of opportunity	7	positive
+Climate change	Production-based CO2 productivity	GDP per unit of energy-related CO2 emissions	USD/kg	56.3698725786392	Sustainability and systemic resilience	8	positive
+Natural capital	Natural land cover	Natural and semi-natural vegetated land cover, as a percentage of total land area	% of total land area	-0.005394736842092	Sustainability and systemic resilience	9	negative
+Institutional capital	Trust in government	Share of people reporting confidence in the national government	% of people	0.647619047619045	Sustainability and systemic resilience	10	positive
+Human capital/health	Avoidable mortality	Mortality from preventable or treatable causes	Deaths per 100 000 population (age standardised rates)	-0.108379310344828	Sustainability and systemic resilience	11	positive
+Fiscal sustainability	Financial net worth of general government	Government financial assets minus liabilities	% of GDP	-14.6360606060606	Sustainability and systemic resilience	12	negative
