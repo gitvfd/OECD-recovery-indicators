@@ -1,0 +1,161 @@
+a, a:visited, a:active {
+  color: #444;
+}
+
+h1{
+  font-family: 'Oswald', sans-serif;
+  font-weight:600;
+  font-size:20px;
+  color:#006fb3;
+  padding: 5px 5px 0px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+
+h2{
+  font-family: 'Noto Sans', sans-serif;
+  font-size:16px; 
+  font-weight:300; 
+  color:#7A7A7A;
+  padding: 5px 10px 10px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline-block;
+
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/**.button {
+  min-width: 130px;
+  padding: 4px 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+}
+
+.button.active {
+  background: #000;
+  color: #fff;
+}**/
+.button{
+  min-width: 130px;
+  padding: 5px 20px 5px 20px;
+  cursor: pointer;
+  text-align: center;
+  font: 16px  TheSerif, Helvetica, Arial, sans-serif;
+  font-weight:300;
+  float:left;
+  margin: 2px 5px 2px 5px;
+  background-color: #eeeeee;
+  background-image: -webkit-linear-gradient(top, #fbfbfb, #e1e1e1);
+  background-image: linear-gradient(to bottom, #fbfbfb, #e1e1e1);
+  color:#494444;
+  font-size: 14px;
+  font-weight:100;
+  border-radius: 0px
+  font-weight: normal;
+  line-height: 22px;
+  color: #494444;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
+
+.button.active {
+  color:#494444;
+  background-color: #c8c8c8;
+  background-image: -webkit-linear-gradient(top, #d4d4d4, #bbbbbb);
+  background-image: linear-gradient(to bottom, #d4d4d4, #bbbbbb);
+  cursor:not-allowed;
+}
+
+
+#vis {
+  /**width: 940px;
+  height: 600px;**/
+  clear: both;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.label{
+
+  font-family: 'Noto Sans', sans-serif;
+  font-size:14px; 
+  font-weight:300;
+  fill:#575757;
+  
+  cursor: default;
+}
+.Layer {
+  font-family:TheSerif;
+  font-weight: 300;
+  font-size: 22px;
+  fill: #787878;
+  cursor: default;
+}
+
+.Explanations, .keyText{
+  font-size: 18px;
+  font-weight: 100;
+  font-style: italic;
+  fill: #787878;
+  cursor: default;
+}
+
+.tooltip {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+  -moz-border-radius:5px;
+	border-radius: 5px;
+  border: 2px solid #000;
+  background: #fff;
+	opacity: .9;
+  color: black;
+	padding: 10px;
+	width: 300px;
+	font-size: 12px;
+	z-index: 10;
+}
+
+.tooltip .title {
+	font-size: 13px;
+}
+
+.tooltip .name {
+  font-weight:300;
+}
+
+.footer {
+  text-align: left;
+}
+
+.siteFooterBar img{
+ clear: both; display: inline-block;float: right; position: relative;
+   width:50px;
+}
+
+
+
+.axisContext line{
+  stroke:#979797;
+  stroke-width:0.25px;
+}
+
+.axisContext path{stroke:none;
+
+}
+.axisContext text{
+  color:#575757;
+  stroke:none
+}
