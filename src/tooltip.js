@@ -85,7 +85,7 @@ function floatingTooltip(tooltipId, widthtt) {
       if (document.getElementById("container").clientWidth>720)
         tt
           .style('top', widthtt / 3 + 'px')
-          .style('left', (document.getElementById("container").clientWidth / 2 - widthtt) + 'px');
+          .style('left', (document.getElementById("container").clientWidth / 3 - widthtt) + 'px');
       else
 
         tt

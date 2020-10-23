@@ -15,7 +15,7 @@ function bubbleChart() {
   var height=600;
 
   // tooltip for mouseover functionality
-  var tooltip = floatingTooltip('gates_tooltip', 240);
+  var tooltip = floatingTooltip('gates_tooltip', 300);
 
   var f = d3.format(".3%")
 
@@ -491,9 +491,9 @@ function bubbleChart() {
     // change outline to indicate hover state.
     var selText = "#text" + d.refIndic;
     var selBubble = "#bubble" + d.refIndic;
-    d3.select(selBubble).attr('stroke', 'black').attr('opacity', 0.75);
+    d3.select(selBubble).attr('stroke', 'black').attr('opacity', 0.65).attr('stroke-width', '4px');
 
-    d3.select(selText).style('fill', "#000000").style('font-weight', '900');
+    d3.select(selText).style('fill', "#000000").style('font-size', '18px').style('font-weight', '900');
 
     var content = '<b><span class="title">'+ d.name +
                   '</span><br></b><br><span class="name">' +
@@ -517,8 +517,8 @@ function bubbleChart() {
     // reset outline
     var selText = "#text" + d.refIndic;
     var selBubble = "#bubble" + d.refIndic;
-    d3.select(selBubble).attr('stroke', d3.rgb(fillColor(d.refIndic)).darker()).attr('opacity', 1);
-    d3.select(selText).style('fill', "#575757").style('font-weight','700')
+    d3.select(selBubble).attr('stroke', d3.rgb(fillColor(d.refIndic)).darker()).attr('opacity', 1).attr('stroke-width', '2px');
+    d3.select(selText).style('fill', "#575757").style('font-size', '12px').style('font-weight','700')
 
 
     tooltip.hideTooltip();
