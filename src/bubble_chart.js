@@ -10,7 +10,7 @@ function bubbleChart() {
   // Constants for sizing
 
   var margin = { top: 70, right: 50, bottom: 30, left: 55 };
-  var width = document.getElementById("vis").offsetWidth - margin.left - margin.right;
+  var width = document.getElementById("vis").clientWidth - margin.left - margin.right;
 
   var height=600;
 
@@ -30,8 +30,8 @@ function bubbleChart() {
 
   // X locations of the Layer titles.
   var LayersTitleGrowthX = {
-    "positive trend": 160,
-    "negative trend": width -160,
+    "positive trend": width / 3,
+    "negative trend": 2 * width / 3,
   };
 
 
@@ -140,9 +140,14 @@ function bubbleChart() {
 
     // Sizes bubbles based on area.
     // @v4: new flattened scale names.
+    var maxWidth;
+    if(width>900)
+      maxWidth=900
+    else
+      maxWidth=width
     var radiusScale = d3.scalePow()
       .exponent(0.5)
-      .range([1, width/12.5])
+      .range([1, maxWidth/12.5])
       .domain([0., maxLetter]);
 
     // Use map() to convert raw data into node data.
@@ -221,12 +226,14 @@ function bubbleChart() {
       .attr('fill', function (d) {return fillColor(d.refIndic); })
       .attr('stroke', function (d) { return d3.rgb(fillColor(d.refIndic)).darker(); })
       .attr('stroke-width', 2)
+      .attr('id', function (d) { return "bubble" + d.refIndic; })
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
 
     var textE = text.enter().append('text')
       .classed('label', true)
       .attr('text-anchor', 'middle')
+      .attr('id', function (d) { return "text" + d.refIndic; })
       .text(function (d) { return d.name/*.substring(0, d.radius / 3)*/ ; })
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail)
@@ -482,13 +489,15 @@ function bubbleChart() {
    */
   function showDetail(d) {
     // change outline to indicate hover state.
-    d3.select(this).attr('stroke', 'black');
+    var selText = "#text" + d.refIndic;
+    var selBubble = "#bubble" + d.refIndic;
+    d3.select(selBubble).attr('stroke', 'black').attr('opacity', 0.75);
 
-    d3.select(this).attr('opacity', 0.75);
+    d3.select(selText).style('fill', "#000000").style('font-weight', '900');
+
     var content = '<b><span class="title">'+ d.name +
-
-      '</span><br></b><br><span class="name">' +
-      d.indicator +
+                  '</span><br></b><br><span class="name">' +
+                  d.indicator +
                   '<br></span><span class="unit">' +
                   d.label +
                   '</span><br/>' +
@@ -506,9 +515,11 @@ function bubbleChart() {
    */
   function hideDetail(d) {
     // reset outline
-    d3.select(this)
-      .attr('stroke', d3.rgb(fillColor(d.refIndic)).darker());
-    d3.select(this).attr('opacity', 1);
+    var selText = "#text" + d.refIndic;
+    var selBubble = "#bubble" + d.refIndic;
+    d3.select(selBubble).attr('stroke', d3.rgb(fillColor(d.refIndic)).darker()).attr('opacity', 1);
+    d3.select(selText).style('fill', "#575757").style('font-weight','700')
+
 
     tooltip.hideTooltip();
   }

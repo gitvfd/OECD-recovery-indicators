@@ -4,7 +4,7 @@
  * Most styling is expected to come from CSS
  * so check out bubble_chart.css for more details.
  */
-function floatingTooltip(tooltipId, width) {
+function floatingTooltip(tooltipId, widthtt) {
   // Local variable to hold tooltip div for
   // manipulation in other functions.
   var tt = d3.select('body')
@@ -14,8 +14,8 @@ function floatingTooltip(tooltipId, width) {
     .style('pointer-events', 'none');
 
   // Set a width if it is provided.
-  if (width) {
-    tt.style('width', width);
+  if (widthtt) {
+    tt.style('width', widthtt);
   }
 
   // Initially it is hidden.
@@ -29,7 +29,6 @@ function floatingTooltip(tooltipId, width) {
    * event is d3.event for positioning.
    */
   function showTooltip(content, refIndic,event) {
-    console.log(timeserieData)
     tt.style('opacity', 1.0)
       .html(content);
 
@@ -78,10 +77,32 @@ function floatingTooltip(tooltipId, width) {
     /*tt
       .style('top', tttop + 'px')
       .style('left', ttleft + 'px');*/
-console.log(width)
-    tt
-      .style('top', width/2+ 'px')
-      .style('left', (document.getElementById("vis").offsetWidth / 2 - width / 2)+ 'px');
+
+    console.log(ttleft)
+    console.log(document.getElementById("container").clientWidth)
+    if (curX > document.getElementById("container").clientWidth/2){
+
+      if (document.getElementById("container").clientWidth>720)
+        tt
+          .style('top', widthtt / 3 + 'px')
+          .style('left', (document.getElementById("container").clientWidth / 2 - widthtt) + 'px');
+      else
+
+        tt
+          .style('top', widthtt / 3 + 'px')
+          .style('left', (5) + 'px');
+    }
+    else{
+      if (document.getElementById("container").clientWidth > 720)
+        tt
+          .style('top', widthtt / 3 + 'px')
+          .style('left', (document.getElementById("container").clientWidth / 2 ) + 'px');
+      else
+        tt
+          .style('top', widthtt / 3 + 'px')
+          .style('left', (document.getElementById("container").clientWidth - widthtt) + 'px');
+    }
+      
   }
 
   return {
@@ -124,7 +145,7 @@ function updatelineChart(refIndic){
   var data = timeserieData.filter(function (d) { return d.refIndic == refIndic && d.value != "" ; })
 
 
-  x.domain(d3.extent(data, function (d) { console.log(dateParser(d.year));return dateParser(d.year); }))
+  x.domain(d3.extent(data, function (d) { return dateParser(d.year); }))
  
   var min, max;
   min =  d3.min(data, function (d) { return parseFloat(d.value); })
@@ -165,14 +186,14 @@ function updatelineChart(refIndic){
       lineSVG.append("g")
         .attr("class", "axisContext y")
         .call(d3.axisLeft(y).tickFormat(function (d) {
-          return y.tickFormat(10, d3.format(".0f"))(d) + "%"
+          return y.tickFormat(4, d3.format(".0f"))(d) + "%"
         }).tickSize(-(widthLine)));
  
     if (refIndic == "3" || refIndic == "4" || refIndic == "5" || refIndic == "8" || refIndic == "11")
       lineSVG.append("g")
         .attr("class", "axisContext y")
         .call(d3.axisLeft(y).tickFormat(function (d) {
-            return y.tickFormat(10, d3.format(".0f"))(d)
+            return y.tickFormat(4, d3.format(".0f"))(d)
         }).tickSize(-(widthLine)));
 
   var color = ["#037BC1", "#ED4E70", "#0BB89C"];

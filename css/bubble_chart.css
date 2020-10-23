@@ -25,7 +25,7 @@ h2{
 
 }
 .container {
-  max-width: 900px;
+  
   margin: auto;
 }
 
@@ -92,7 +92,6 @@ h2{
   font-size:12px; 
   font-weight:700;
   fill:#575757;
-  
   cursor: default;
 }
 .Layer {
