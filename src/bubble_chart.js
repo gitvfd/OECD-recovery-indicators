@@ -30,8 +30,8 @@ function bubbleChart() {
 
   // X locations of the Layer titles.
   var LayersTitleGrowthX = {
-    "positive": 160,
-    "negative": width -160,
+    "positive trend": 160,
+    "negative trend": width -160,
   };
 
 
@@ -259,7 +259,6 @@ function bubbleChart() {
     
 
     function wrap(text) {
-console.log('test')
       text.each(function (d) {console.log(d)
       var text = d3.select(this),
         width = d.radius * 2,
@@ -300,8 +299,8 @@ console.log('test')
     simulation.nodes(nodes);
 
     // Set initial layout to single group.
-    groupBubbles();
-
+    //groupBubbles(); // initial view as we want to focus on the trend we start with splitBubblesGrowth
+    splitBubblesGrowth();
 
 
     // Add explanantions sentence.

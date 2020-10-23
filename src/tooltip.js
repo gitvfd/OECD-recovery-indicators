@@ -78,10 +78,10 @@ function floatingTooltip(tooltipId, width) {
     /*tt
       .style('top', tttop + 'px')
       .style('left', ttleft + 'px');*/
-
+console.log(width)
     tt
-      .style('top', 20+ 'px')
-      .style('left', 20 + 'px');
+      .style('top', 240+ 'px')
+      .style('left', width/2 + 'px');
   }
 
   return {
