@@ -217,6 +217,22 @@ function updatelineChart(refIndic){
         (data.filter(function (d) { return d.variable == "avg"; }))
     })
 
+    const annotationsOECD = [
+      {
+        note: { label: "OECD" },
+        x: x(dateParser(data.filter(function (d) { return d.variable == "avg"; })[data.filter(function (d) { return d.variable == "avg"; }).length-1].year)),
+        y: y(parseFloat(data.filter(function (d) { return d.variable == "avg"; })[data.filter(function (d) { return d.variable == "avg"; }).length - 1].value)),
+        color:"#037BC1",
+        dy: -5,
+        dx: -10,
+        type: d3.annotationCalloutElbow,
+        disable: ["connector"],
+      },
+    ];
+    const makeAnnotationOECD = d3.annotation().annotations(annotationsOECD);
+    lineSVG.append("g").call(makeAnnotationOECD)
+
+
   //line median
   lineSVG
     .append("path")
@@ -234,6 +250,20 @@ function updatelineChart(refIndic){
         .y(function (d) { return y(parseFloat(d.value)); })
         (data.filter(function (d) { return d.variable == "median"; }))
     })
+    const annotationsMedian = [
+      {
+        note: { label: "median" },
+        x: x(dateParser(data.filter(function (d) { return d.variable == "median"; })[data.filter(function (d) { return d.variable == "avg"; }).length - 1].year)),
+        y: y(parseFloat(data.filter(function (d) { return d.variable == "median"; })[data.filter(function (d) { return d.variable == "avg"; }).length - 1].value)),
+        dy: 5,
+        dx: -15,
+        color:"#ED4E70",
+        type: d3.annotationCalloutElbow,
+        disable: ["connector"],
+      },
+    ];
+    const makeAnnotationMedian = d3.annotation().annotations(annotationsMedian);
+    lineSVG.append("g").call(makeAnnotationMedian)
 
   //line S90
   lineSVG
@@ -252,6 +282,19 @@ function updatelineChart(refIndic){
         .y(function (d) { return y(parseFloat(d.value)); })
         (data.filter(function (d) { return d.variable == "perc90"; }))
     })
+    const annotationsPerc90 = [
+      {
+        note: { label: "90th percentile" },
+        x: x(dateParser(data.filter(function (d) { return d.variable == "perc90"; })[0].year)),
+        y: y(parseFloat(data.filter(function (d) { return d.variable == "perc90"; })[0].value)),
+        dy: -15,
+        dx: 25,
+        color:"#0BB89C",
+        type: d3.annotationCalloutElbow,
+      },
+    ];
+  const makeAnnotationPerc90 = d3.annotation().annotations(annotationsPerc90);
+  lineSVG.append("g").call(makeAnnotationPerc90)
 
   //line S10
   lineSVG
@@ -270,4 +313,17 @@ function updatelineChart(refIndic){
         .y(function (d) { return y(parseFloat(d.value)); })
         (data.filter(function (d) { return d.variable == "perc10"; }))
     })
+  const annotationsPerc10 = [
+    {
+      note: { label: "10th percentile" },
+      x: x(dateParser(data.filter(function (d) { return d.variable == "perc10"; })[0].year)),
+      y: y(parseFloat(data.filter(function (d) { return d.variable == "perc10"; })[0].value)),
+      dy: -5,
+      dx: 15,
+      color: "#0BB89C",
+      type: d3.annotationCalloutElbow,
+    },
+  ];
+  const makeAnnotationPerc10 = d3.annotation().annotations(annotationsPerc10);
+  lineSVG.append("g").call(makeAnnotationPerc10)
 }

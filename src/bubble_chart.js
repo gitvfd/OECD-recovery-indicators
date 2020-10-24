@@ -18,7 +18,7 @@ function bubbleChart() {
   var tooltip = floatingTooltip('gates_tooltip', 300);
 
   var f = d3.format(".3%")
-
+  var maxLetterRadius;
   // Locations to move bubbles towards, depending
   // on which view mode is selected.
   var center = { x: width / 2, y: height / 2 };
@@ -36,25 +36,25 @@ function bubbleChart() {
 
 
   var LayerCentersGroup = {
-    "Inclusive outcomes from growth": { x: width / 3, y: height / 3 },
-    "Inclusive efficient markets": { x: 2 * width / 3, y: height / 3 },
-    "Equal Opportunity for future prosperity": { x: width / 3, y:  2 * height / 3 },
-    "Governance for inclusive growth": { x: 2 * width / 3, y: 2 * height / 3 }
+    "Strong economic activity": { x: width / 3, y: height / 3 },
+    "Well-being today": { x: 2 * width / 3, y: height / 3 },
+    "Inclusion and equality of opportunity": { x: width / 3, y:  2 * height / 3 },
+    "Sustainability and systemic resilience": { x: 2 * width / 3, y: 2 * height / 3 }
   };
 
   // X locations of the Layer titles.
   var LayersTitleGroupX = {
-    "Inclusive outcomes from growth": 200,
-    "Inclusive efficient markets": width -200,
-    "Equal Opportunity for future prosperity": 200,
-    "Governance for inclusive growth": width -200,
+    "Strong economic activity": width/15,
+    "Well-being today": width - width / 15,
+    "Inclusion and equality of opportunity": width / 15,
+    "Sustainability and systemic resilience": width - width / 15,
   };
 
     var LayersTitleGroupY = {
-    "Inclusive outcomes from growth": 80,
-    "Inclusive efficient markets": 80,
-    "Equal Opportunity for future prosperity": height-80,
-    "Governance for inclusive growth": height - 80,
+    "Strong economic activity": 20,
+    "Well-being today": 20,
+    "Inclusion and equality of opportunity": height-20,
+    "Sustainability and systemic resilience": height - 20,
   };
 
   var LayerCentersUnit = {
@@ -112,12 +112,19 @@ function bubbleChart() {
 
   // Nice looking colors - no reason to buck the trend
   // @v4 scales now have a flattened naming scheme
+
   /**var fillColor = d3.scaleOrdinal()
     .domain(['positive','negative','stable'])
     .range(['#27B499', '#F15C54','#9AB0BE']);**/
-  var fillColor = d3.scaleOrdinal()
+
+ /* var fillColor = d3.scaleOrdinal()
     .domain(['1', '2', '3','4','5','6','7','8','9','10','11','12'])
     .range(['#037BC1', '#A154A1', '#D70B8C', '#ED4E70', '#DA2128', '#F47920', '#FFC20E', '#8CC841', '#4DB757', '#0BB89C', '#00A8CB', '#0D809B']);
+*/
+
+  var fillColor = d3.scaleOrdinal()
+    .domain(['Strong economic activity', 'Well-being today', 'Inclusion and equality of opportunity', 'Sustainability and systemic resilience', '5', '6', '7', '8', '9', '10', '11', '12'])
+    .range(['#E73741', '#037BC1', '#FFC20E', '#0BB89C', '#A154A1', '#D70B8C', '#ED4E70', '#DA2128', '#F47920', '#FFC20E', '#8CC841', '#4DB757', '#0BB89C', '#00A8CB', '#0D809B']);
 
   /*
    * This data manipulation function takes the raw data from
@@ -136,7 +143,7 @@ function bubbleChart() {
     // note we have to ensure the total_amount is a number.
     var maxAmount = d3.max(rawData, function (d) { return +d.Total; });
 
-    var maxLetter = d3.max(rawData, function (d) { return d.Theme.length; });
+     maxLetter = d3.max(rawData, function (d) { return d.Theme.length; });
 
     // Sizes bubbles based on area.
     // @v4: new flattened scale names.
@@ -147,8 +154,10 @@ function bubbleChart() {
       maxWidth=width
     var radiusScale = d3.scalePow()
       .exponent(0.5)
-      .range([1, maxWidth/12.5])
+      .range([1, maxWidth/15])
       .domain([0., maxLetter]);
+
+    maxLetterRadius = radiusScale(maxLetter)
 
     // Use map() to convert raw data into node data.
     // Checkout http://learnjsdata.com/ for more on
@@ -223,8 +232,8 @@ function bubbleChart() {
     var bubblesE = bubbles.enter().append('circle')
       .classed('bubble', true)
       .attr('r', 0)
-      .attr('fill', function (d) {return fillColor(d.refIndic); })
-      .attr('stroke', function (d) { return d3.rgb(fillColor(d.refIndic)).darker(); })
+      .attr('fill', function (d) { return fillColor(d.layerGroup); })
+      .attr('stroke', function (d) { return d3.rgb(fillColor(d.layerGroup)).darker(); })
       .attr('stroke-width', 2)
       .attr('id', function (d) { return "bubble" + d.refIndic; })
       .on('mouseover', showDetail)
@@ -237,35 +246,6 @@ function bubbleChart() {
       .text(function (d) { return d.name/*.substring(0, d.radius / 3)*/ ; })
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail)
-      //.call(wrap)
-
-    
-
-    function wrap(text) {
-      text.each(function (d) {
-        console.log(d)
-      var text = d3.select(this),
-        width = d.radius * 2,
-        x = d.x,
-        y = d.y,
-        words = text.text().split(/\s+/).reverse(),
-        word,
-        line = [],
-        lineNumber = 0,
-        lineHeight = 1.1,
-        tspan = text.text(null).append("tspan").attr("x", x).attr("y", y);
-      while (word = words.pop()) {
-        line.push(word);
-        tspan.text(line.join(" "));
-        if (tspan.node().getComputedTextLength() > width) {
-          line.pop();
-          tspan.text(line.join(" "));
-          line = [word];
-          tspan = text.append("tspan").attr('text-anchor', 'middle').attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + "em").text(word);
-        }
-      }
-    })
-    }
 
     // @v4 Merge the original empty selection and the enter selection
     bubbles = bubbles.merge(bubblesE);
@@ -276,24 +256,23 @@ function bubbleChart() {
     // correct radius
     bubbles.transition()
       .duration(2000)
-      .attr('r', function (d) { return d.radius; });
+      //.attr('r', function (d) { return d.radius; });
+      .attr('r', maxLetterRadius);/////////////////////take line above for different radius//////
 
     // Set the simulation's nodes to our newly created nodes array.
     // @v4 Once we set the nodes, the simulation will start running automatically!
     simulation.nodes(nodes);
 
+
+    ///////////////////////////////////////////////////////
+    ////////////DEFINING DIFFERENT START VIEWS/////////////
+    ///////////////////////////////////////////////////////
     // Set initial layout to single group.
     //groupBubbles(); // initial view as we want to focus on the trend we start with splitBubblesGrowth
-    splitBubblesGrowth();
+    //splitBubblesGrowth(); // PICK THIS ONE for growth view
+    splitBubblesGroup()
 
 
-    // Add explanantions sentence.
-    var Explanations = svg.append('text')
-        .attr('class', 'Explanations')
-        .attr('x', width/2)
-        .attr('y', 40)
-        .attr('text-anchor', 'middle')
-        .text("");
   };
 
 
@@ -401,34 +380,6 @@ function bubbleChart() {
   
 
 
-
-
-
-  function updateSentence(displayName){
-    svg.selectAll('.Explanations').remove();
-    var text;
-
-   /** if (displayName === 'OECD') {
-      text=["OECD countries produce 32% of the world's GHG emissions"];
-    } else if (displayName === 'Top10') {
-      text=["The top 10 GHG emitters produce 61% of the world's emissions"];
-    } else if (displayName === 'Top25GDP') {
-      text=[""];
-    }else if (displayName === 'Bottom100') {
-      text=["The 100 lowest GHG emitters produce only 11% of the world's emissions"];
-    }  else {
-      text=["In 2014, the world produced greenhouse gas emissions (GHG) equalling 55,444 million tonnes of CO2"];
-    }
-    var Explanations = svg.selectAll('.Explanations').data(text).enter()
-        .append('text')
-        .attr('class', 'Explanations')
-        .attr('x', width/2)
-        .attr('y', 40)
-        .attr('text-anchor', 'middle')
-        .text(function (d) { return d; });**/
-    
-  }
-
   /*
    * Hides Layer title displays.
    */
@@ -464,7 +415,15 @@ function bubbleChart() {
       .attr('class', 'Layer')
       .attr('x', function (d) { return LayersTitleGroupX[d]; })
       .attr('y', function (d) { return LayersTitleGroupY[d]; })
-      .attr('text-anchor', 'middle')
+      .attr('text-anchor', function(d){
+        console.log(d)
+        if (d=="Strong economic activity" || d=="Inclusion and equality of opportunity") {
+          return "start"
+        }
+        else
+          return 'end'
+      })
+      //'middle'// preivously middle)
       .text(function (d) { return d; });
   }
     function showLayerTitlesUnit() {
@@ -517,7 +476,7 @@ function bubbleChart() {
     // reset outline
     var selText = "#text" + d.refIndic;
     var selBubble = "#bubble" + d.refIndic;
-    d3.select(selBubble).attr('stroke', d3.rgb(fillColor(d.refIndic)).darker()).attr('opacity', 1).attr('stroke-width', '2px');
+    d3.select(selBubble).attr('stroke', d3.rgb(fillColor(d.layerGroup)).darker()).attr('opacity', 1).attr('stroke-width', '2px');
     d3.select(selText).style('fill', "#575757").style('font-size', '12px').style('font-weight','700')
 
 
@@ -542,7 +501,6 @@ function bubbleChart() {
       groupBubbles();
     }
 
-    updateSentence(displayName)
   };
 
 
